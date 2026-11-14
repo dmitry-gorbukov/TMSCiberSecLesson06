@@ -2,7 +2,12 @@
 
 1. [Задание 1.](doc/Zadanie1.md) 
 **Ответ:**
-ывкпм мвыфп смпквы
+## John
+user:MILO2008
+admin:hxtour
+web_admin:t061584
+root:washington1776
+db_user:mmr431723
 
 2. Задание 2.
 **Ответ:**
