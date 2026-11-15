@@ -67,3 +67,5 @@ d1e576b71ccef5978d221fadf4f0e289 → superpassword
 8344711654700fe530f0d2ac74599a48 → aezakmi
 a67e565b11cd18f7a922b58f5476b569 → hesoyam
 ```
+
+5. [Задание 5.](doc/Zadanie5.md)
