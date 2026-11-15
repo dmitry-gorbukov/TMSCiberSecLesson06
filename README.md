@@ -33,4 +33,23 @@
 
 
 **Ответ:**
-ывкпммпф
+
+
+| login | salt | hash (SHA-256) | password |
+|---|---|---|---|
+| user | 1337 | `70ab6e15…d4f987` | `54cami9` |
+| admin | 9117 | `6c39425f…13726b25` | `428248h` |
+| web_admin | 2560 | `433a276d…c5e3828d` | `656800` |
+| root | 6766 | `ef62c8bb…42750dee` | `rubenkus` |
+| db_user | 3780 | `44ca6ade…b164fd5` | `cup+preds` |
+
+Формат ответа к задаче (`login → password`):
+
+```
+user      → 54cami9
+admin     → 428248h
+web_admin → 656800
+root      → rubenkus
+db_user   → cup+preds
+```
+
