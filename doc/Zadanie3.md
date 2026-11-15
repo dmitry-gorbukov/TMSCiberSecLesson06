@@ -9,13 +9,13 @@
 **Условие:**
 
 **Даны хэши:**
-
+```bash
 user:1337:70ab6e15b42f3e8addef4be9651f8c6f872dc8ac5a36d2b6160493bcc3d4f987
 admin:9117:6c39425f74db54f7d99cbfb1a12816421b1a1db02003bfbe3270ec0113726b25
 web_admin:2560:433a276d5c258c089d803c77b76e7367f772f6c4c34fc524c70cda9bc5e3828d
 root:6766:ef62c8bbf7e8bb6e57ca5d8153c7e11864c0ce4cb0be51ee50ebff4e42750dee
 db_user:3780:44ca6adee541830e8c69ced64b361a51f3be10acb7286af94922449e4b164fd5
-
+```
 **Формат:**
 
 login🧂hash
