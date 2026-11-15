@@ -69,3 +69,96 @@ a67e565b11cd18f7a922b58f5476b569 → hesoyam
 ```
 
 5. [Задание 5.](doc/Zadanie5.md)
+
+**Результат:**
+
+```bash
+┌──(dima㉿kali)-[/etc/nginx/ssl]
+└─$ curl -v https://localhost
+* Host localhost:443 was resolved.
+* IPv6: ::1
+* IPv4: 127.0.0.1
+*   Trying [::1]:443...
+* connect to ::1 port 443 from ::1 port 53808 failed: Connection refused
+*   Trying 127.0.0.1:443...
+* ALPN: curl offers h2,http/1.1
+* TLSv1.3 (OUT), TLS handshake, Client hello (1):
+* SSL Trust Anchors:
+*   CAfile: /etc/ssl/certs/ca-certificates.crt
+*   CApath: /etc/ssl/certs
+* TLSv1.3 (IN), TLS handshake, Server hello (2):
+* TLSv1.3 (IN), TLS change cipher, Change cipher spec (1):
+* TLSv1.3 (IN), TLS handshake, Encrypted Extensions (8):
+* TLSv1.3 (IN), TLS handshake, Certificate (11):
+* TLSv1.3 (IN), TLS handshake, CERT verify (15):
+* TLSv1.3 (IN), TLS handshake, Finished (20):
+* TLSv1.3 (OUT), TLS change cipher, Change cipher spec (1):
+* TLSv1.3 (OUT), TLS handshake, Finished (20):
+* SSL connection using TLSv1.3 / TLS_AES_256_GCM_SHA384 / X25519MLKEM768 / RSASSA-PSS
+* ALPN: server accepted http/1.1
+* Server certificate:
+*   subject: C=RU; ST=Local; L=Local; O=LocalDev; CN=localhost
+*   start date: Nov 15 15:40:25 2026 GMT
+*   expire date: Nov 15 15:40:25 2027 GMT
+*   issuer: C=RU; ST=Local; L=Local; O=LocalDev; CN=localhost
+*   Certificate level 0: Public key type RSA (2048/112 Bits/secBits), signed using sha256WithRSAEncryption
+*   subjectAltName: "localhost" matches cert's "localhost"
+* OpenSSL verify result: 0
+* SSL certificate verified via OpenSSL.
+* Established connection to localhost (127.0.0.1 port 443) from 127.0.0.1 port 33452 
+* using HTTP/1.x
+> GET / HTTP/1.1
+> Host: localhost
+> User-Agent: curl/8.22.0
+> Accept: */*
+> 
+* Request completely sent off
+* TLSv1.3 (IN), TLS handshake, Newsession Ticket (4):
+* TLSv1.3 (IN), TLS handshake, Newsession Ticket (4):
+< HTTP/1.1 200 OK
+< Server: nginx
+< Date: Sun, 15 Nov 2026 16:04:56 GMT
+< Content-Type: text/html
+< Content-Length: 160
+< Last-Modified: Sun, 15 Nov 2026 16:02:25 GMT
+< Connection: keep-alive
+< ETag: "6af9d791-a0"
+< Accept-Ranges: bytes
+< 
+<!DOCTYPE html>
+<html>
+<head><title>Secure Localhost</title></head>
+<body>
+<h1>HTTPS is working!</h1>
+<p>Certificate verified successfully.</p>
+</body>
+</html>
+* Connection #0 to host localhost:443 left intact
+
+┌──(dima㉿kali)-[/etc/nginx/ssl]
+└─$ 
+```
+
+**Смотрим вывод `curl -v`:**
+
+```
+* SSL connection using TLSv1.3 / TLS_AES_256_GCM_SHA384 / X25519MLKEM768 / RSASSA-PSS
+* Server certificate:
+*   subject: C=RU; ST=Local; L=Local; O=LocalDev; CN=localhost
+*   subjectAltName: "localhost" matches cert's "localhost"
+* OpenSSL verify result: 0
+* SSL certificate verified via OpenSSL.
+< HTTP/1.1 200 OK
+```
+
+**Всё решено:**
+
+- ✅ **TLSv1.3** с современным шифром `TLS_AES_256_GCM_SHA384`;
+- ✅ **`OpenSSL verify result: 0`** — цепочка доверия сошлась;
+- ✅ **`SSL certificate verified via OpenSSL`** — сертификат доверенный;
+- ✅ **`subjectAltName: "localhost" matches cert's "localhost"`** — SAN совпадает с запрошенным хостом;
+- ✅ **`HTTP/1.1 200 OK`** — страница отдаётся успешно;
+- ✅ **Никаких** `SSL certificate problem` / `curl: (60)` — ошибок нет.
+
+
+
