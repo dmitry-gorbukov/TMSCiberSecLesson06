@@ -54,3 +54,16 @@ db_user   → cup+preds
 ```
 
 4. [Задание 4.](doc/Zadanie4.md)
+
+
+**Ответ:**
+
+Формат ответа к задаче (`hash → password`):
+
+```
+d1e576b71ccef5978d221fadf4f0e289 → superpassword
+22d7fe8c185003c98f97e5d6ced420c7 → qwertyui
+8a24367a1f46c141048752f2d5bbd14b → P@ssw0rd!
+8344711654700fe530f0d2ac74599a48 → aezakmi
+a67e565b11cd18f7a922b58f5476b569 → hesoyam
+```
