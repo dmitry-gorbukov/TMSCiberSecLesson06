@@ -53,3 +53,4 @@ root      → rubenkus
 db_user   → cup+preds
 ```
 
+4. [Задание 4.](doc/Zadanie4.md)
