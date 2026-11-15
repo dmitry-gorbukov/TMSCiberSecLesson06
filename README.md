@@ -153,12 +153,12 @@ a67e565b11cd18f7a922b58f5476b569 → hesoyam
 
 **Всё решено:**
 
-- ✅ **TLSv1.3** с современным шифром `TLS_AES_256_GCM_SHA384`;
-- ✅ **`OpenSSL verify result: 0`** — цепочка доверия сошлась;
-- ✅ **`SSL certificate verified via OpenSSL`** — сертификат доверенный;
-- ✅ **`subjectAltName: "localhost" matches cert's "localhost"`** — SAN совпадает с запрошенным хостом;
-- ✅ **`HTTP/1.1 200 OK`** — страница отдаётся успешно;
-- ✅ **Никаких** `SSL certificate problem` / `curl: (60)` — ошибок нет.
+-  **TLSv1.3** с современным шифром `TLS_AES_256_GCM_SHA384`;
+-  **`OpenSSL verify result: 0`** — цепочка доверия сошлась;
+-  **`SSL certificate verified via OpenSSL`** — сертификат доверенный;
+-  **`subjectAltName: "localhost" matches cert's "localhost"`** — SAN совпадает с запрошенным хостом;
+-  **`HTTP/1.1 200 OK`** — страница отдаётся успешно;
+-  **Никаких** `SSL certificate problem` / `curl: (60)` — ошибок нет.
 
 
 
