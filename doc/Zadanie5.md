@@ -421,7 +421,8 @@ Verify return code: 0 (ok)
 
 > **Пояснения:** `Verify return code: 0 (ok)` — сертификат успешно проверен по цепочке доверия. Если бы мы не добавили его в доверенные, было бы `Verify return code: 18 (self-signed certificate)`.
 
----
+----
+----
 
 
 [На главную страницу](../README.md)
